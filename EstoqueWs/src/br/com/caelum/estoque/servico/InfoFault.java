@@ -16,6 +16,11 @@ public class InfoFault {
         this.dataErro = dataErro;
     }
 
+    public depoisDoMetodoInfoFault(String mensagem, Date dataErro) {
+        this.mensagem = mensagem;
+        this.dataErro = dataErro;
+    }
+
     //JAX-B precisa
     InfoFault() {
     }

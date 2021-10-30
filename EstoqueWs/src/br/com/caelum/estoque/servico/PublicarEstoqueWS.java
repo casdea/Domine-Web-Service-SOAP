@@ -10,7 +10,7 @@ public class PublicarEstoqueWS {
 		String URL = "http://localhost:8080/estoquews";
 
 		System.out.println("EstoqueWS rodando: " + URL);
-
+	    System.out.println("Alterei a branche testeMerge....");
 		// associando URL com implementacao
 		Endpoint.publish(URL, implementacaoWS);
 	}
