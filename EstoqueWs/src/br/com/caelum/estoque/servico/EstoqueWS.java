@@ -13,6 +13,7 @@ import br.com.caelum.estoque.modelo.item.Filtro;
 import br.com.caelum.estoque.modelo.item.Filtros;
 import br.com.caelum.estoque.modelo.item.Item;
 import br.com.caelum.estoque.modelo.item.ItemDao;
+import br.com.caelum.estoque.modelo.item.ItemValidador;
 import br.com.caelum.estoque.modelo.usuario.TokenDao;
 import br.com.caelum.estoque.modelo.usuario.TokenUsuario;
 
@@ -40,6 +41,9 @@ public class EstoqueWS {
 		if(!new TokenDao().ehValido(token)) {
 		    throw new AutorizacaoException("Autorizacao falhou");
 		}
+		
+		 //novo
+        new ItemValidador(item).validate();
 		
 	    System.out.println("Cadastrando " + item);
 	    this.dao.cadastrar(item);
